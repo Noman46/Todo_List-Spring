@@ -18,30 +18,32 @@
         <link href="static/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        
-        <div class="simple_form">
-            
-            <form id="reg">
+
+         <div class="simple_form">
+            <s:url var="url_reg_form" value="/register"/>
+            <f:form action="${url_reg_form}" modelAttribute="command" id="reg">
                 <h1  style="color:red;">Registration</h1>
-                <input type="text" name="name" placeholder="Enter your name" id="box">
+                <f:input path="u.name" placeholder="Enter your name" id="box"/>
+
                 </br>
                 </br>
                 </br>
 
-                <input type="text" name="phone" placeholder="Enter your phone number" id="box">
+                <f:input path="u.phone" placeholder="Enter your phone number" id="box"/>
                 </br>
                 </br
                 </br>
-                <input type="text" name="loginName" placeholder="Enter your user name" id="box">
+                <f:input path="u.loginName" placeholder="Enter your user name" id="box"/>
                 </br>
                 </br>
                 </br>
-                <input type="password" name="password" placeholder="Enter your password" id="box">
+                <f:password path="u.password" placeholder="Enter your password" id="box"/>
                 </br>
                 </br>
                 </br>
-                <input type="submit" value="Register" id="butt">
-            </form>
+                <f:button id="butt">Register</f:button>
+            </f:form>
         </div>
+
     </body>
 </html>

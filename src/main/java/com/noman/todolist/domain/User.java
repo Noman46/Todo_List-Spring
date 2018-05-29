@@ -13,6 +13,10 @@ public class User {
     private String password;
     private String loginStatus;
 
+    public User() {
+    }
+    
+
     public Integer getUserId() {
         return userId;
     }
