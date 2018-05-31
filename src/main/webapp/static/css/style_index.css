@@ -1,0 +1,24 @@
+body {
+     background-image: url("../images/bg1.jpg");
+     background-repeat: no-repeat;
+     background-size: 100% 700px;
+}
+
+
+#main{
+    text-align: center;
+    color:white;
+    width:50%;
+    height:400px;
+    margin-top: 100px;
+    margin-left: 290px;
+    background-color:#330033;
+    opacity:0.5;
+    padding:50px 0px;
+}
+#main:hover{
+     opacity:0.8;
+  
+}
+
+
