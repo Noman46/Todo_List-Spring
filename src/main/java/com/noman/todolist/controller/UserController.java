@@ -5,8 +5,11 @@
  */
 package com.noman.todolist.controller;
 
+import com.noman.todolist.command.LoginCommand;
 import com.noman.todolist.command.RegCommand;
 import com.noman.todolist.domain.User;
+import com.noman.todolist.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,10 +21,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class UserController {
-
+   @Autowired
+   private UserService userService;
+    
     @RequestMapping(value = {"/", "/index"})
     public String index() {
         return "index";
+    }
+    @RequestMapping(value = {"/aboutme"})
+    public String getAboutMe(){
+    return "aboutme"; // Return About me JSP page
     }
 
     @RequestMapping(value = {"/reg_form"})
@@ -34,6 +43,17 @@ public class UserController {
     @RequestMapping(value = {"/register"})
     public String registerUser(@ModelAttribute("command") RegCommand cmd, Model m) {
         User u = cmd.getU();
-        return "redirect:index";
+        userService.register(u);
+        
+        return "redirect:loginform?act=reg"; // Redirecting means not to show JSP page rather it redirects to the "index" action handeler
     }
+    
+    @RequestMapping(value = {"/loginform"})
+    public String loginForm(Model m) {
+        LoginCommand cmd = new LoginCommand();
+        m.addAttribute("command", cmd);
+        return "login";
+    }
+    
+    
 }

@@ -12,6 +12,10 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <!DOCTYPE html>
 <html>
+    
+    <div>
+        <jsp:include page="include/menu.jsp"/>
+    </div>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User Registration</title>
