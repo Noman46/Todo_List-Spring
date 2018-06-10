@@ -13,16 +13,17 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @author Noman Ibrahim
  */
 public class Todo {
-    
+
     private Integer todoId;
     private Integer userId;
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date date;
+    private String month;
+    private String day;
+    private String year;
     private String title;
     private String description;
     private String priority;
-    
-    public Todo(){
+
+    public Todo() {
     }
 
     public Integer getTodoId() {
@@ -41,12 +42,28 @@ public class Todo {
         this.userId = userId;
     }
 
-    public Date getDate() {
-        return date;
+    public String getMonth() {
+        return month;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public String getTitle() {
@@ -75,10 +92,8 @@ public class Todo {
 
     @Override
     public String toString() {
-        return "Todo{" + "todoId=" + todoId + ", userId=" + userId + ", date=" + date + ", title=" + title + ", description=" + description + ", priority=" + priority + '}';
+        return "Todo{" + "todoId=" + todoId + ", userId=" + userId + ", month=" + month + ", day=" + day + ", year=" + year + ", title=" + title + ", description=" + description + ", priority=" + priority + '}';
     }
     
-    
-    
-    
+
 }
