@@ -1,0 +1,100 @@
+
+/* Body used to represent the whole page.
+background-repeat : no-repeat prevents the image to not to repeat again and again
+
+*/
+body {
+    background-image: url("../images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 920px;
+}
+
+/* heading div having a heading <h3> */ 
+.heading h3{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color:white;
+    font-size: 25px;
+}
+
+
+/* the main div having the form */
+.todo_form{
+    width: 600px;
+    height:805px;
+    background-color: black;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 400px;
+    border: 3px solid white;
+    opacity:0.9;
+
+}
+
+
+/* Class table is a div*/
+.table{
+    margin-left: 25px;
+}
+
+/* to get the <th> element */
+.table th{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color:white;
+    font-size: 20px;
+}
+
+/*
+ id for table cell.
+*/
+#tdtd{
+
+    height:30px; 
+    width: 150px;
+    text-align: center;
+    margin-right:20px;
+    border-radius:3px;
+
+
+}
+
+
+/* This is the div that holds the second table as class name table*/
+.title{
+    margin-top: 50px;
+    margin-left: 3px;
+    margin-right: 3px;
+    width:590px;
+
+}
+.title h3{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color:white;
+    font-size: 20px;
+
+}
+
+/* This is the id that to manupulate input text box*/
+#title{
+    height:30px;
+    width:530px;
+    text-align: center;
+    font-size: 18px;
+    border-radius:3px;
+}
+
+
+
+/* ======= TEXT AREA DIV =========*/
+#textarea{
+    width:530px;
+    height:100px;
+    text-align: center;
+    font-size: 18px;
+    border-radius:3px;
+
+}
+.textarea h3{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
+    color:white;
+}
