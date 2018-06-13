@@ -12,18 +12,18 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <!DOCTYPE html>
 <html>
-    
+
     <div>
         <jsp:include page="include/menu.jsp"/>
     </div>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User Registration</title>
-        <link href="static/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="static/css/style_register.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
 
-         <div class="simple_form">
+        <div class="simple_form">
             <s:url var="url_reg_form" value="/register"/>
             <f:form action="${url_reg_form}" modelAttribute="command" id="reg">
                 <h1  style="color:red;">Registration</h1>
@@ -47,6 +47,11 @@
                 </br>
                 <f:button id="butt">Register</f:button>
             </f:form>
+        </div>
+        <div id="footer">
+            <footer>
+                <jsp:include page="include/footer.jsp"/>
+            </footer>
         </div>
 
     </body>

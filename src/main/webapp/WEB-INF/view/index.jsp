@@ -29,6 +29,10 @@
              according to the date by simply <a href="#">register </a>register your self here.</p>
             
         </div>
-        
+        <div id="footer">
+            <footer>
+                <jsp:include page="include/footer.jsp"/>
+            </footer>
+        </div>
     </body>
 </html>

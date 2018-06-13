@@ -1,0 +1,39 @@
+body {
+     background-image: url("../images/bg3.jpg");
+     background-repeat: no-repeat;
+     background-size: 100% 700px;
+}
+
+.simple_form{
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 450px;
+    
+}
+#reg{
+    width:50%;
+    background-color:#330033;
+    opacity:0.8;
+    padding:50px 0px;
+}
+#box{
+    width:250px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#butt{
+    width:200px;
+    padding: 10px;
+    border-radius: 7px;
+    color:#000000;
+    font-size: 17px;
+}
+#butt:hover {
+   
+    background-color:#660066;
+    
+}
+#footer{
+    margin-top:10px;
+}
+
