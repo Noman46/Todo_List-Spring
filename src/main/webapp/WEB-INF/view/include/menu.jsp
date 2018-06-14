@@ -15,7 +15,7 @@
             body{
                 margin: 0px;
                 border: 0px;
-                
+
             }
             #navbar{
                 width:100%;
@@ -28,19 +28,54 @@
                 text-align: center;
                 opacity: 0.8;
             }
+            .navbar2{
+                width:100%;
+                height: 65px;
+                position: fixed ;
+                top: 0;
+                background-color: black;
+                position: fixed;
+                display: block;
+                text-align: center;
+                opacity: 0.8;
+            }
+            .navbar2 ul{
+                margin:0px;
+                padding:0px;
+                list-style: none;
+            }
+            .navbar2 ul li{
+                float:left;
+                width:180px;
+                height:40px;
+
+
+            }
+            .navbar2 ul li a{
+
+                text-decoration: none;
+                display:block;
+                color:white;
+
+
+            }
+            .navbar2 ul li a:hover{
+                color:green;
+            }
+            .navbar2 ul li ul li{
+                display:none;
+            }
+            .navbar2 ul li:hover ul li{
+                display:block;
+                background-color:#4b0d2b;
+                color:black;
+            }
 
             #link{
-                color: white;
-                text-decoration: none;
-                padding: 15px;
-                vertical-align: central;
-                padding-right: 80px;
+                margin-left:710px;
+            }
 
-            }
-            #link:hover{
-               
-                color: coral;
-            }
+
         </style>
     </head>
     <body>
@@ -59,16 +94,28 @@
             </div>
         </c:if>
         <c:if test="${param.act eq 'taskpage'}">
-            <div id="navbar">
-                <s:url var="url_addnemTask" value="#"/>
-                <a href="${url_addnewTask}" id="link">ADD NEW TASK</a>
-                <s:url var="url_search" value="#"/>
-                <a href="${url_search}" id="link">MY TASKS</a>
+            <div class="navbar2">
+                <ul>
+                    <s:url var="url_addnemTask" value="#"/>
+                    <li> <a href="${url_addnewTask}">ADD NEW TASK</a></li>
+                        <s:url var="url_search" value="#"/>
+                    <li><a href="${url_search}">MY TASKS</a>
+                        <ul>
+                            <li>
+                                <a href="#">ORDER BY PRIORITY</a>
+                            </li>
+                            <li>
+                                <a href="#">ORDER BY TIME</a>
+                            </li>
+                        </ul>
 
-                <s:url var="url_logout" value="#"/>
-                <a href="${url_logout}" id="link">LOGOUT</a>
-                <s:url var="url_about_me" value="#"/>
-                <a href="${url_about_me}" id="link">ABOUT ME</a>
+                    </li>
+
+                    <s:url var="url_logout" value="#"/>
+                    <li><a href="${url_logout}" id="link">LOGOUT</a></li>
+                        <s:url var="url_about_me" value="#"/>
+                    <li><a href="${url_about_me}" id="link">ABOUTME</a></li>
+                </ul>
             </div>
         </c:if>
     </center>
