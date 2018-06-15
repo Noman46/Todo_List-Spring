@@ -7,6 +7,7 @@ package com.noman.todolist.controller;
 
 import com.noman.todolist.domain.Todo;
 import com.noman.todolist.service.UserService;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +24,24 @@ public class TodoController {
     @Autowired
     private UserService userService;
     @RequestMapping(value = {"/saveAddedTask"})
-    public String saveAddedTask(@ModelAttribute("command") Todo todo, Model m) {
+    public String saveAddedTask(@ModelAttribute("command") Todo todo, Model m, HttpSession session) {
 
+        Integer userId = (Integer) session.getAttribute("userId");
+        todo.setUserId(userId);
         userService.saveTodo(todo);
 
         return "success";
+    }
+    
+    @RequestMapping(value ={"/priority"})
+    public String givePriority(){
+    
+     return "viewTaskByPriority";
+    }
+    
+     @RequestMapping(value ={"/time"})
+    public String giveTimetask(){
+    
+     return "viewTaskByTime";
     }
 }

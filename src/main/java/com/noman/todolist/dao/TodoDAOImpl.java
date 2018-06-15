@@ -24,9 +24,9 @@ public class TodoDAOImpl extends BaseDAO implements TodoDAO {
 
     @Override
     public void save(Todo todo) {
-        String sql = "INSERT INTO todo (todoId,month,day,year,title,description,priority) VALUES (:todoId, :month, :day, :year, :title, :description, :priority)";
+        String sql = "INSERT INTO todo (userId,month,day,year,title,description,priority) VALUES (:userId, :month, :day, :year, :title, :description, :priority)";
         Map m = new HashMap();
-        m.put("todoId", todo.getTodoId());
+        m.put("userId", todo.getUserId());
         m.put("month", todo.getMonth());
         m.put("day", todo.getDay());
         m.put("year", todo.getYear());

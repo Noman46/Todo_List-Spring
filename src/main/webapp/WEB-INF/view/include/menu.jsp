@@ -130,7 +130,7 @@
 
                     </li>
 
-                    <s:url var="url_logout" value="#"/>
+                    <s:url var="url_logout" value="/logout"/>
                     <li><a href="${url_logout}" id="link">LOGOUT</a></li>
                         <s:url var="url_about_me" value="#"/>
                     <li><a href="${url_about_me}" id="link">ABOUTME</a></li>
