@@ -28,6 +28,23 @@
                 text-align: center;
                 opacity: 0.8;
             }
+             #link1{
+                color: white;
+                text-decoration: none;
+                padding: 15px;
+                vertical-align: central;
+                padding-right: 80px;
+
+            }
+            #link1:hover{
+
+                color: green;
+            }
+            
+            
+            
+            
+            
             .navbar2{
                 width:100%;
                 height: 65px;
@@ -83,14 +100,14 @@
         <c:if test="${param.act != 'taskpage'}">
             <div id="navbar">
                 <s:url var="url_home" value="/index"/>
-                <a href="${url_home}" id="link">HOME</a>
+                <a href="${url_home}" id="link1">HOME</a>
                 <s:url var="url_reg_form" value="/reg_form"/>
-                <a href="${url_reg_form}" id="link">REGISTRATION</a>
+                <a href="${url_reg_form}" id="link1">REGISTRATION</a>
 
                 <s:url var="url_login_form" value="/loginform"/>
-                <a href="${url_login_form}" id="link">LOGIN</a>
+                <a href="${url_login_form}" id="link1">LOGIN</a>
                 <s:url var="url_about_me" value="/aboutme"/>
-                <a href="${url_about_me}" id="link">ABOUT ME</a>
+                <a href="${url_about_me}" id="link1">ABOUT ME</a>
             </div>
         </c:if>
         <c:if test="${param.act eq 'taskpage'}">
@@ -102,10 +119,12 @@
                     <li><a href="${url_search}">MY TASKS</a>
                         <ul>
                             <li>
-                                <a href="#">ORDER BY PRIORITY</a>
+                                <s:url var="url_priority" value="/priority"/>
+                                <a href="${url_priority}">ORDER BY PRIORITY</a>
                             </li>
                             <li>
-                                <a href="#">ORDER BY TIME</a>
+                                <s:url var="url_by_time" value="/time"/>
+                                <a href="${url_by_time}">ORDER BY TIME</a>
                             </li>
                         </ul>
 
