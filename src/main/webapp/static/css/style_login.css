@@ -36,4 +36,8 @@ body {
 #footer{
     margin-top:40px;
 }
+#error{
+    color:red;
+    font-size: 20px;
+}
 
