@@ -14,6 +14,7 @@ import com.noman.todolist.rm.UserRowMapper;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 /**
@@ -40,8 +41,14 @@ public class UserServiceImpl extends BaseDAO implements UserService {
         Map m = new HashMap();
         m.put("ln", loginName);
         m.put("pw", password);
-        User u = getNamedParameterJdbcTemplate().queryForObject(sql, m, new UserRowMapper());
-        return u;
+        try{
+            User u = getNamedParameterJdbcTemplate().queryForObject(sql, m, new UserRowMapper());
+            return u;
+        } catch(EmptyResultDataAccessException ex)
+        {
+        return null;
+        }
+        
 
     }
 
