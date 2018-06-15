@@ -27,6 +27,9 @@
             <s:url var="url_log_form" value="/logindo"/>
             <f:form action="${url_log_form}" modelAttribute="command" id="reg">
                 <h1  style="color:red;">Login</h1>
+                <c:if test="${error != null}">
+                    <p id="error">${error}</p>
+                </c:if>
                 <f:input path="loginName" placeholder="Enter your name" id="box"/>
 
                 </br>
