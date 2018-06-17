@@ -115,7 +115,7 @@
                 <ul>
                     <s:url var="url_addnemTask" value="#"/>
                     <li> <a href="${url_addnewTask}">ADD NEW TASK</a></li>
-                        <s:url var="url_search" value="#"/>
+                        <s:url var="url_search" value="/todolist"/>
                     <li><a href="${url_search}">MY TASKS</a>
                         <ul>
                             <li>

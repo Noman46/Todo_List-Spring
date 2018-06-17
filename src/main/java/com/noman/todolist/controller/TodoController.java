@@ -44,4 +44,9 @@ public class TodoController {
     
      return "viewTaskByTime";
     }
+     @RequestMapping(value ={"/todolist"})
+    public String goToTodolist(){
+    
+     return "todolist";
+    }
 }
