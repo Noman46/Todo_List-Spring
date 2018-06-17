@@ -30,7 +30,7 @@ public class TodoController {
         todo.setUserId(userId);
         userService.saveTodo(todo);
 
-        return "success";
+        return "todolist";
     }
     
     @RequestMapping(value ={"/priority"})
