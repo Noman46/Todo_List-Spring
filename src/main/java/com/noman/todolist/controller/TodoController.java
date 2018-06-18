@@ -6,6 +6,7 @@
 package com.noman.todolist.controller;
 
 import com.noman.todolist.domain.Todo;
+import com.noman.todolist.service.TodoService;
 import com.noman.todolist.service.UserService;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,10 @@ public class TodoController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private TodoService todoservice;
+    
     @RequestMapping(value = {"/saveAddedTask"})
     public String saveAddedTask(@ModelAttribute("command") Todo todo, Model m, HttpSession session) {
 
@@ -30,7 +35,7 @@ public class TodoController {
         todo.setUserId(userId);
         userService.saveTodo(todo);
 
-        return "todolist";
+        return "redirect:todolist";
     }
     
     @RequestMapping(value ={"/priority"})
@@ -45,7 +50,10 @@ public class TodoController {
      return "viewTaskByTime";
     }
      @RequestMapping(value ={"/todolist"})
-    public String goToTodolist(){
+    public String goToTodolist(Model m, HttpSession session){
+        
+        Integer userId = (Integer) session.getAttribute("userId");
+        m.addAttribute("todolists", todoservice.findUserTodo(userId));
     
      return "todolist";
     }

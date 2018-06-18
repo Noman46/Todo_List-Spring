@@ -95,11 +95,26 @@ h2 {
     width: 100%;
     background-color: #464A52;
     color: #FB667A;
-    
+
 
     box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
 }
 
+#a1{
+    color:greenyellow;
+
+}
+#a1:hover{
+    color:#FB667A;
+;
+
+}
+#a2{
+    color:white;
+}
+#a2:hover{
+    color:red;
+}
 
 
 

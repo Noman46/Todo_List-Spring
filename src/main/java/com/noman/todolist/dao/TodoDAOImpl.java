@@ -6,6 +6,7 @@
 package com.noman.todolist.dao;
 
 import com.noman.todolist.domain.Todo;
+import com.noman.todolist.rm.TodoRowMapper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,7 +71,8 @@ public class TodoDAOImpl extends BaseDAO implements TodoDAO {
 
     @Override
     public List<Todo> findByProperty(String propName, Object propValue) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      String sql = "SELECT todoId, userId, month, day, year, title, description, priority FROM todo WHERE "+propName+"=?";
+      return getJdbcTemplate().query(sql, new TodoRowMapper(), propValue);
     }
 
 }
