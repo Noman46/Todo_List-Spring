@@ -16,23 +16,34 @@
 
     </head>
     <body>
+        <!-- ${todolists} -->
 
-       
-           <!-- ${todolists} -->
-        
-        <table class="container">
-            <thead>
-                <tr>
-                    <th><h1>Month</h1></th>
-                    <th><h1>Day</h1></th>
-                    <th><h1>Year</h1></th>
-                    <th><h1>Title</h1></th>
-                    <th><h1>Description</h1></th>
-                    <th><h1>Action</h1></th>
+        <div>
+            <jsp:include page="include/menu.jsp"/>
+        </div>
+        </br>
+        </br>
 
-                </tr>
-            </thead>
-            <tbody>
+        <div class="heading">
+            <p><h2>Your Working List</h2></p>
+    </div>
+
+
+
+    <table class="container">
+        <thead>
+            <tr>
+                <th><h1>Month</h1></th>
+                <th><h1>Day</h1></th>
+                <th><h1>Year</h1></th>
+                <th><h1>Title</h1></th>
+                <th><h1>Description</h1></th>
+                <th><h1>Priority</h1></th>
+                <th><h1>Action</h1></th>
+
+            </tr>
+        </thead>
+        <tbody>
 
             <c:forEach var="t" items="${todolists}" varStatus = "status">
                 <tr>
@@ -42,7 +53,12 @@
                     <td>${t.year}</td>
                     <td>${t.title}</td>
                     <td><textarea name="" id="t" cols="6" rows="3">${t.description}</textarea></td>
-                    <td><a href="#" id="a1">Edit</a>| <a href="#" id="a2">Delete</a></td>
+                    <td>${t.priority}</td>
+                    <s:url var="url_delete" value="/del_todolist">
+                        <s:param name="todoId" value="${t.todoId}"/>
+                    </s:url>
+                    
+                    <td><a href="#" id="a1">Edit</a>| <a href="${url_delete}" id="a2">Delete</a></td>
                 </tr>
 
             </c:forEach>

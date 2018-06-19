@@ -97,7 +97,7 @@
     </head>
     <body>
     <center>
-        <c:if test="${param.act != 'taskpage'}">
+       <c:if test="${sessionScope.userId ==null}">
             <div id="navbar">
                 <s:url var="url_home" value="/index"/>
                 <a href="${url_home}" id="link1">HOME</a>
@@ -110,7 +110,7 @@
                 <a href="${url_about_me}" id="link1">ABOUT ME</a>
             </div>
         </c:if>
-        <c:if test="${param.act eq 'taskpage'}">
+        <c:if test="${sessionScope.userId !=null}">
             <div class="navbar2">
                 <ul>
                     <s:url var="url_addnemTask" value="#"/>

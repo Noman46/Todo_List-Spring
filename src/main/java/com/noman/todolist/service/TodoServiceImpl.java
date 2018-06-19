@@ -33,7 +33,7 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public void delete(Integer todoId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        todoDao.delete(todoId);
     }
 
     @Override

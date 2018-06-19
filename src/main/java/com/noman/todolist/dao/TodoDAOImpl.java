@@ -56,7 +56,8 @@ public class TodoDAOImpl extends BaseDAO implements TodoDAO {
 
     @Override
     public void delete(Integer todoId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     String sql = "DELETE FROM todo WHERE todoId=?";
+     getJdbcTemplate().update(sql, todoId);
     }
 
     @Override

@@ -94,7 +94,9 @@ h2 {
     border:2px solid black;
     width: 100%;
     background-color: #464A52;
-    color: #FB667A;
+    color: #A7A1AE;
+    font-family: 'Open Sans', sans-serif;
+
 
 
     box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
@@ -106,7 +108,7 @@ h2 {
 }
 #a1:hover{
     color:#FB667A;
-;
+    ;
 
 }
 #a2{
@@ -115,6 +117,17 @@ h2 {
 #a2:hover{
     color:red;
 }
+
+.heading{
+
+    height:40px;
+    background-color: #323C50;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+    
 
 
 
