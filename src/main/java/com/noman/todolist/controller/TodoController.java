@@ -40,8 +40,9 @@ public class TodoController {
     }
 
     @RequestMapping(value = {"/priority"})
-    public String givePriority() {
-
+    public String givePriority(Model m, HttpSession session) {
+        Integer userId = (Integer) session.getAttribute("userId");
+        m.addAttribute("todolists", todoservice.findByPriority(userId));
         return "viewTaskByPriority";
     }
 
@@ -66,4 +67,12 @@ public class TodoController {
         todoservice.delete(todoId);
         return "redirect:todolist?act=del";
     }
+
+    @RequestMapping(value = "/del_todolist_priority")
+    public String deleteTodoListPriority(@RequestParam("todoId") Integer todoId) {
+
+        todoservice.delete(todoId);
+        return "redirect:priority?act=del";
+    }
+
 }

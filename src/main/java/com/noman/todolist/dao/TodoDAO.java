@@ -28,4 +28,6 @@ public interface TodoDAO {
 
     public List<Todo> findByProperty(String propName, Object propValue);
 
+    public List<Todo> orderByPriority(String propName, Object propValue);
+
 }

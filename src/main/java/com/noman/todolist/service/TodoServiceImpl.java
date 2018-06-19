@@ -51,4 +51,9 @@ public class TodoServiceImpl implements TodoService {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public List<Todo> findByPriority(Integer userId) {
+        return todoDao.orderByPriority("userId", userId);
+    }
+
 }

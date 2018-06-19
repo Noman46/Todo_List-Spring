@@ -75,5 +75,11 @@ public class TodoDAOImpl extends BaseDAO implements TodoDAO {
       String sql = "SELECT todoId, userId, month, day, year, title, description, priority FROM todo WHERE "+propName+"=?";
       return getJdbcTemplate().query(sql, new TodoRowMapper(), propValue);
     }
+    
+    @Override
+    public List<Todo> orderByPriority(String propName, Object propValue) {
+      String sql = "SELECT todoId, userId, month, day, year, title, description, priority FROM todo WHERE "+propName+"=? ORDER BY priority";
+      return getJdbcTemplate().query(sql, new TodoRowMapper(), propValue);
+    }
 
 }

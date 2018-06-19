@@ -68,15 +68,15 @@
                     <p><h3>Select The Priority of Your Task</h3></p>
                 </div>
                 <div class="radio">
-                    <f:radiobutton path="priority" value="High" id="high"/>
+                    <f:radiobutton path="priority" value="a" id="high"/>
                     <label for="high">High</label>
                 </div>
                 <div class="radio">
-                    <f:radiobutton path="priority" value="Medium" id="medium"/>
+                    <f:radiobutton path="priority" value="b" id="medium"/>
                     <label for="medium">Medium</label>
                 </div>
                 <div class="radio">
-                    <f:radiobutton path="priority" value="Low" id="low"/>
+                    <f:radiobutton path="priority" value="c" id="low"/>
                     <label for="low">Low</label>
                 </div>
                 <div class="button">

@@ -53,11 +53,19 @@
                     <td>${t.year}</td>
                     <td>${t.title}</td>
                     <td><textarea name="" id="t" cols="6" rows="3">${t.description}</textarea></td>
-                    <td>${t.priority}</td>
+                        <c:if test="${t.priority == 'a'}">
+                        <td>High</td>
+                    </c:if>
+                    <c:if test="${t.priority == 'b'}">
+                        <td>Medium</td>
+                    </c:if>
+                    <c:if test="${t.priority == 'c'}">
+                        <td>Low</td>
+                    </c:if>
                     <s:url var="url_delete" value="/del_todolist">
                         <s:param name="todoId" value="${t.todoId}"/>
                     </s:url>
-                    
+
                     <td><a href="#" id="a1">Edit</a>| <a href="${url_delete}" id="a2">Delete</a></td>
                 </tr>
 
