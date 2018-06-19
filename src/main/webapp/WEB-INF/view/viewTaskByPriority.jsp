@@ -25,7 +25,7 @@
         </br>
 
         <div class="heading">
-            <p><h2>Your Working List According to Priority</h2></p>
+            <p><h2>Your Task List According to Priority</h2></p>
     </div>
 
 
