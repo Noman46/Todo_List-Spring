@@ -65,8 +65,12 @@
                     <s:url var="url_delete" value="/del_todolist">
                         <s:param name="todoId" value="${t.todoId}"/>
                     </s:url>
+                    <s:url var="url_edit" value="/edit_todolist">
+                        <s:param name="todoId" value="${t.todoId}"/>
+                    </s:url>
 
-                    <td><a href="#" id="a1">Edit</a>| <a href="${url_delete}" id="a2">Delete</a></td>
+
+                    <td><a href="${url_edit}" id="a1">Edit</a>| <a href="${url_delete}" id="a2">Delete</a></td>
                 </tr>
 
             </c:forEach>

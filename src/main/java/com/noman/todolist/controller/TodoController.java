@@ -30,13 +30,33 @@ public class TodoController {
     private TodoService todoservice;
 
     @RequestMapping(value = {"/saveAddedTask"})
-    public String saveAddedTask(@ModelAttribute("command") Todo todo, Model m, HttpSession session) {
+    public String saveOrUpdateAddedTask(@ModelAttribute("command") Todo todo, Model m, HttpSession session) {
+        Integer todoId = (Integer) session.getAttribute("pTodoId");
+        if (todoId == null) {
+            Integer userId = (Integer) session.getAttribute("userId");
+            todo.setUserId(userId);
+            userService.saveTodo(todo);
 
-        Integer userId = (Integer) session.getAttribute("userId");
-        todo.setUserId(userId);
-        userService.saveTodo(todo);
+            return "redirect:todolist?act=worklist";
+        } else {
+            todo.setTodoId(todoId);
+            todoservice.update(todo);
+            return "redirect:todolist?act=worklist";
 
-        return "redirect:todolist?act=worklist";
+        }
+
+    }
+     @RequestMapping(value = {"/saveAddedTaskPriority"})
+    public String updateAddedTask(@ModelAttribute("command") Todo todo, Model m, HttpSession session) {
+        Integer todoId = (Integer) session.getAttribute("pTodoId");
+        
+       
+            todo.setTodoId(todoId);
+            todoservice.update(todo);
+            return "redirect:priority?act=update";
+
+        
+
     }
 
     @RequestMapping(value = {"/priority"})
@@ -73,6 +93,24 @@ public class TodoController {
 
         todoservice.delete(todoId);
         return "redirect:priority?act=del";
+    }
+
+    @RequestMapping(value = {"/edit_todolist"})
+    public String editList(Model m, HttpSession session, @RequestParam("todoId") Integer todoId) {
+
+        session.setAttribute("pTodoId", todoId);
+        Todo t = todoservice.findById(todoId);
+        m.addAttribute("command", t);
+        return "addNewTask";
+    }
+
+    @RequestMapping(value = {"/edit_todolist_priority"})
+    public String editListPriority(Model m, HttpSession session, @RequestParam("todoId") Integer todoId) {
+
+        session.setAttribute("pTodoId", todoId);
+        Todo t = todoservice.findById(todoId);
+        m.addAttribute("command", t);
+        return "addNewTaskPriority";
     }
 
 }

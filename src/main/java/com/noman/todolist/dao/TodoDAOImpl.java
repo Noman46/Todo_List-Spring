@@ -34,19 +34,28 @@ public class TodoDAOImpl extends BaseDAO implements TodoDAO {
         m.put("title", todo.getTitle());
         m.put("description", todo.getDescription());
         m.put("priority", todo.getPriority());
-        
+
         SqlParameterSource ps = new MapSqlParameterSource(m);
         KeyHolder kh = new GeneratedKeyHolder();
         getNamedParameterJdbcTemplate().update(sql, ps, kh);
         Integer todoId = kh.getKey().intValue();
         todo.setTodoId(todoId);
-        
 
     }
 
     @Override
     public void update(Todo todo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "UPDATE todo SET month=:month, day=:day, year=:year, title=:title, description=:description, priority=:priority  WHERE todoId=:todoId";
+        Map m = new HashMap();
+        m.put("todoId", todo.getTodoId());
+        m.put("month", todo.getMonth());
+        m.put("day", todo.getDay());
+        m.put("year", todo.getYear());
+        m.put("title", todo.getTitle());
+        m.put("description", todo.getDescription());
+        m.put("priority", todo.getPriority());
+
+        getNamedParameterJdbcTemplate().update(sql, m);
     }
 
     @Override
@@ -56,13 +65,14 @@ public class TodoDAOImpl extends BaseDAO implements TodoDAO {
 
     @Override
     public void delete(Integer todoId) {
-     String sql = "DELETE FROM todo WHERE todoId=?";
-     getJdbcTemplate().update(sql, todoId);
+        String sql = "DELETE FROM todo WHERE todoId=?";
+        getJdbcTemplate().update(sql, todoId);
     }
 
     @Override
     public Todo findById(Integer todoId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT todoId, userId, month, day, year, title, description, priority FROM todo WHERE todoId=?";
+        return getJdbcTemplate().queryForObject(sql, new TodoRowMapper(), todoId);
     }
 
     @Override
@@ -72,14 +82,14 @@ public class TodoDAOImpl extends BaseDAO implements TodoDAO {
 
     @Override
     public List<Todo> findByProperty(String propName, Object propValue) {
-      String sql = "SELECT todoId, userId, month, day, year, title, description, priority FROM todo WHERE "+propName+"=?";
-      return getJdbcTemplate().query(sql, new TodoRowMapper(), propValue);
+        String sql = "SELECT todoId, userId, month, day, year, title, description, priority FROM todo WHERE " + propName + "=?";
+        return getJdbcTemplate().query(sql, new TodoRowMapper(), propValue);
     }
-    
+
     @Override
     public List<Todo> orderByPriority(String propName, Object propValue) {
-      String sql = "SELECT todoId, userId, month, day, year, title, description, priority FROM todo WHERE "+propName+"=? ORDER BY priority";
-      return getJdbcTemplate().query(sql, new TodoRowMapper(), propValue);
+        String sql = "SELECT todoId, userId, month, day, year, title, description, priority FROM todo WHERE " + propName + "=? ORDER BY priority";
+        return getJdbcTemplate().query(sql, new TodoRowMapper(), propValue);
     }
 
 }

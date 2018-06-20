@@ -28,7 +28,7 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public void update(Todo t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        todoDao.update(t);
     }
 
     @Override
@@ -38,12 +38,12 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public Todo findById(Integer todoId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         return todoDao.findById(todoId);
     }
 
     @Override
     public List<Todo> findUserTodo(Integer userId) {
-              return todoDao.findByProperty("userId", userId);
+        return todoDao.findByProperty("userId", userId);
     }
 
     @Override
