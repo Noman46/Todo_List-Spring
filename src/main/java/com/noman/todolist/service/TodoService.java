@@ -27,4 +27,11 @@ public interface TodoService {
     public List<Todo> findByPriority(Integer userId);
 
     public List<Todo> findUserTodo(Integer userId, String txt);
+
+    public List<Todo> findUserTodoOnlyHigh(Integer userId);
+
+    public List<Todo> findUserTodoOnlyMedium(Integer userId);
+
+    public List<Todo> findUserTodoOnlyLow(Integer userId);
+
 }

@@ -28,7 +28,7 @@
                 text-align: center;
                 opacity: 0.8;
             }
-             #link1{
+            #link1{
                 color: white;
                 text-decoration: none;
                 padding: 15px;
@@ -40,11 +40,11 @@
 
                 color: green;
             }
-            
-            
-            
-            
-            
+
+
+
+
+
             .navbar2{
                 width:100%;
                 height: 65px;
@@ -97,7 +97,7 @@
     </head>
     <body>
     <center>
-       <c:if test="${sessionScope.userId ==null}">
+        <c:if test="${sessionScope.userId ==null}">
             <div id="navbar">
                 <s:url var="url_home" value="/index"/>
                 <a href="${url_home}" id="link1">HOME</a>
@@ -126,6 +126,19 @@
                                 <s:url var="url_by_time" value="/time"/>
                                 <a href="${url_by_time}">ORDER BY TIME</a>
                             </li>
+                            <li>
+                                <s:url var="url_only_for_High" value="/High"/>
+                                <a href="${url_only_for_High}">ONLY FOR HIGH</a>
+                            </li>
+                            <li>
+                                <s:url var="url_only_for_Medium" value="/Medium"/>
+                                <a href="${url_only_for_Medium}">ONLY FOR MEDIUM</a>
+                            </li>
+                            <li>
+                                <s:url var="url_only_for_Low" value="/Low"/>
+                                <a href="${url_only_for_Low}">ONLY FOR LOW</a>
+                            </li>
+
                         </ul>
 
                     </li>

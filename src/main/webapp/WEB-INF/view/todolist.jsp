@@ -27,6 +27,12 @@
         <div class="heading">
             <p><h2>Your Working List</h2></p>
     </div>
+        <div class="search">
+            <form action="<s:url value="/search"/>">
+                <input type="text" name="freetext" placeholder="search">
+                <button>Find</button>
+            </form>
+        </div>
 
 
 
