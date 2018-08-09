@@ -25,7 +25,7 @@ A very simple web app to keep track your busy schedule.The following module we c
      * Spring MVC
   ### Database
      * MySql
-     * H2 daabase engin.
+     * H2 database engine.
      * Spring Jdbc Template.
   ### IDE
      * Netbeans (8.2)
