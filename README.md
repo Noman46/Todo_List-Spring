@@ -1,3 +1,14 @@
+# Screen Shots 
+ 
+<img src="src/main/webapp/static/images/1.PNG" width="600"/>
+
+<img src="src/main/webapp/static/images/2.PNG" width="600"/>
+
+<img src="src/main/webapp/static/images/3.PNG" width="600"/>
+
+<img src="src/main/webapp/static/images/4.PNG" width="600"/>
+
+
 # Project Title
 TO_DO_LIST
 
@@ -39,16 +50,6 @@ A very simple web app to keep track your busy schedule.The following module we c
   ## For Video Preview
   https://youtu.be/RT58bW-wIR8
  
- ##Screen Shots 
- 
-<img src="src/main/webapp/static/images/1.PNG" width="600"/>
-
-<img src="src/main/webapp/static/images/2.PNG" width="600"/>
-
-<img src="src/main/webapp/static/images/3.PNG" width="600"/>
-
-<img src="src/main/webapp/static/images/4.PNG" width="600"/>
-
 
 
 ## Acknowledgments
